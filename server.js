@@ -30,7 +30,7 @@ const port= process.env.PORT;
 app.listen(port,()=>{
 
 
-console.log(`Server is running on Port 3030`);
+console.log(`Server is running on Port ${port}`);
 
 
 })
