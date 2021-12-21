@@ -26,7 +26,8 @@ useUnifiedTopology:true,
 
 
 }).then(()=> console.log("Database connected succcessfully"))
-app.listen(3030,()=>{
+const port= process.env.PORT;
+app.listen(port,()=>{
 
 
 console.log(`Server is running on Port 3030`);

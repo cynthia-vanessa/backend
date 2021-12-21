@@ -27,11 +27,23 @@ required:true,
 dateScheduled:{
     type:String,
     required:true,
+},
+user:{
+    type:mongoose.Schema.ObjectId,
+    ref:"User",
 }
 
-    }
+  
     
-    )
+});
+tourSchema.pre(/^find/,function(next){
+    this.populate({
+        path:"user",
+        select:"lastName email address"
+    });
+    next();
+
+})
 
     const tour =mongoose.model('Tour',tourSchema);
 
